@@ -71,28 +71,29 @@ void setup() {
 
 ## Examples
 
-    TM1651_show_all_chars.ino
-    Scrolls through all available characters and symbols.
+- **TM1651_show_all_chars.ino**
+  
+  Scrolls through all available characters and symbols.
 
-    TM1651_brightness_level.ino.ino
-    Demonstrates all brightness levels (0–7), showing corresponding number.
+- **TM1651_brightness_level.ino.ino**
+  
+  Demonstrates all brightness levels (0–7), showing corresponding number.
 
-    TM1651_counter.ino
-    A basic counter from 000 to 999 increasing 1 each second.
+- **TM1651_counter.ino**
+  
+  A basic counter from 000 to 999 increasing 1 each second.
     
 ---
 
 ## Project Ideas
 
-    Digital counters (people, laps, etc.)
+- Digital counters (people, laps, score, etc.)
 
-    Simple clocks or timers
+- Simple clocks or timers
 
-    Display for sensor readings
+- Display for sensor readings
 
-    User interface for MIDI or sound devices with ESP32
-
-    Score counters.
+- User interface for MIDI or sound devices with ESP32
 
 ---
 
