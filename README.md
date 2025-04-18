@@ -28,7 +28,8 @@ The code has been adapted and refactored to ensure compatibility with ESP32 micr
 
 Viewed from the rear of the display board:
 
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/enkonsierto/GotekLEDC68-ESP32/blob/main/docs/LEDC68-pin.png"><img src="https://github.com/enkonsierto/GotekLEDC68-ESP32/blob/main/docs/LEDC68-pin.png" alt="LEDC68 Pinout" style="max-width: 100%;"></a>
+[![LEDC68 Pinout](https://github.com/coopzone-dc/GotekLEDC68/blob/master/docs/LEDC68-pin.png)](https://github.com/enkonsierto/GotekLEDC68-ESP32/blob/main/docs/LEDC68-pin.png)
+
 <pre>
 !----------------------------!
 ! x1 x3  c                   !
