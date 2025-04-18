@@ -1,17 +1,35 @@
-Gotek 3-digit LED display driver for ESP32
+# Gotek LEDC68 3-digit Display Driver for ESP32
 
-This is an ESP32 library for using re-purposed LEDC68 3 digit LED displays from GoTek Drives.
+This library allows you to control 3-digit LED displays based on the **TM1651** chip, often found in modified Gotek drives. It is designed specifically for use with ESP32 microcontrollers.
 
-This repository is based on the work of coopzone-dc [https://github.com/coopzone-dc/GotekLEDC68].
+Many of these displays are removed or replaced when users modify their Gotek drives, leaving perfectly functional TM1651 displays unused. This project gives them a new purpose by adapting an existing Arduino driver to work with ESP32 SoCs.
 
-This repository adapts the original driver for Arduino to work with ESP32 SOCs.
-there are a lot of 3 digit LCDs TM1651 chip that are changed for another ones to show text and other useful information with the Gotek. Seeing that there are a lot of new LCDs wituot use, I decided to search a driver to give them a new life, I couldn't find one for ESP32 (the SOC I'm using at this moment), but I found the mentioned for Arduino and I thought to adapt the code.
-For more information go to the original repository.
+---
 
-Connections to the board are (viewed from the rear):
+## Features
 
+- Compatible with TM1651-based 3-digit LED displays
+- Designed for ESP32 boards (using GPIOs for CLK and DIO)
+- Supports numeric display and several alphanumeric characters
+- Brightness control (8 levels)
+- Decimal point support
+- Simple integration and clean code
 
+---
 
+## Credits & Sources
+
+This library is based on the original work by [coopzone-dc](https://github.com/coopzone-dc/GotekLEDC68), with prior contributions from Fred Chu and Detlef Giessmann.  
+The code has been adapted and refactored to ensure compatibility with ESP32 microcontrollers.
+
+---
+
+## Pinout / Connections
+
+Viewed from the rear of the display board:
+
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/enkonsierto/GotekLEDC68-ESP32/blob/main/docs/LEDC68-pin.png"><img src="https://github.com/enkonsierto/GotekLEDC68-ESP32/blob/main/docs/LEDC68-pin.png" alt="LEDC68 Pinout" style="max-width: 100%;"></a>
+<pre>
 !----------------------------!
 ! x1 x3  c                   !
 !        c                   !
@@ -26,3 +44,57 @@ x1=clk
 x2=dio
 x3=GND
 x4=+5v (3.3-5v)
+</pre>
+⚠️ Use current-limiting resistors if needed when running at 5V with ESP32.
+
+---
+
+## Getting Started
+
+1. Clone this repository or download the files.
+2. Include `TM1651.cpp` and `TM1651.h` in your ESP32 Arduino project.
+3. Initialize and use the display:
+
+```cpp
+#include "TM1651.h"
+
+TM1651 display(18, 19); // CLK on GPIO 18, DIO on GPIO 19
+
+void setup() {
+  display.displaySet(BRIGHT_TYPICAL); // Set brightness (0–7)
+  display.displayInteger(123);        // Show number
+}
+```
+
+---
+
+## Examples
+
+    TM1651_test.ino
+    Scrolls through all available characters and symbols.
+
+    brillo_demo.ino
+    Demonstrates all brightness levels (0–7), showing corresponding number.
+
+---
+
+## Project Ideas
+
+    Digital counters (people, laps, etc.)
+
+    Simple clocks or timers
+
+    Display for sensor readings
+
+    User interface for MIDI or sound devices with ESP32
+
+    Score counters.
+
+---
+
+## License
+
+This library is released under the LGPL v2.1 license.
+You are free to use, modify, and redistribute the code, provided that the same license and attribution are preserved.
+
+Want to contribute or show your project using this library? Feel free to share it!
