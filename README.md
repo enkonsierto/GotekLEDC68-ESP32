@@ -70,12 +70,15 @@ void setup() {
 
 ## Examples
 
-    TM1651_test.ino
+    TM1651_show_all_chars.ino
     Scrolls through all available characters and symbols.
 
-    brillo_demo.ino
+    TM1651_brightness_level.ino.ino
     Demonstrates all brightness levels (0–7), showing corresponding number.
 
+    TM1651_counter.ino
+    A basic counter from 000 to 999 increasing 1 each second.
+    
 ---
 
 ## Project Ideas
